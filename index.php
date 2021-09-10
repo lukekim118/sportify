@@ -11,7 +11,7 @@ try {
             //         $password = $_POST["password"];
             //     }
             //     login($email, $password);
-            //     break;
+
         case "signUp":
             signUp();
             break;
