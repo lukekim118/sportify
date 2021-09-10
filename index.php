@@ -1,14 +1,14 @@
 <?php
 // Connexion to the database: 
 try {
-    require("./controller/controller.php");
+    // require("./controller/controller.php");
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
     switch ($action) {
 
 
         default:
-
+            require("./view/landing.php");
             break;
     }
 } catch (Exception $e) {
