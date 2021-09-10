@@ -12,6 +12,8 @@
 
 <body>
     <?= $content; ?>
+    <script defer src="../PROJECTBATCH13/public/js/FormCheck.js"></script>
+    <script defer src="../PROJECTBATCH13/public/js/main.js"></script>
 </body>
 
 </html>

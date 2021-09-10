@@ -5,31 +5,55 @@ try {
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
     switch ($action) {
-        case "logIn":
-            //I have to modify... 
+            // case "logIn":
+            //     if (!empty($_POST["email"]) && !empty($_POST["password"])) {
+            //         $email = $_POST["email"];
+            //         $password = $_POST["password"];
+            //     }
+            //     login($email, $password);
+            //     break;
+        case "signUp":
+            signUp();
+            break;
+        case "signUpControl":
+            if (isset($_POST["emailAddress"])) {
+                $emailAddress = $_POST["emailAddress"];
+            }
+            if (isset($_POST["firstname"])) {
+                $firstname = $_POST["firstname"];
+            }
+            if (isset($_POST["lastname"])) {
+                $lastname = $_POST["lastname"];
+            }
+            if (isset($_POST["newPassword"])) {
+                $newPassword = $_POST["newPassword"];
+            }
+            if (isset($_POST["rePassword"])) {
+                $rePassword = $_POST["rePassword"];
+            }
+            if (isset($_POST["phone"])) {
+                $phone = $_POST["phone"];
+            } else {
+                $phone = "";
+            }
+
+            createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
+            break;
+
+        case "userPage":
             if (isset($_POST["email"]) && isset($_POST["password"])) {
                 $email = $_POST["email"];
                 $password = $_POST["password"];
             }
-            login($email, $password);
+            userPage($email, $password);
             break;
-        case "signUp":
-
-            break;
-
-        case "userPage":
-            userPage();
-            break;
-
-
 
         default:
-            // s
             login();
             break;
     }
 } catch (Exception $e) {
     $errorMsg = $e->getMessage();
-    $errorCode = $e->getCode();
-    // require("./view/errorView.php");
+    // $errorCode = $e->getCode();
+    require("./view/errorView.php");
 }

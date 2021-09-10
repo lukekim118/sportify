@@ -1,23 +1,23 @@
 <?php $title = "Sign-in"; ?>
 
 <?php ob_start(); ?>
-<form class="log__in--container" action="index.php" method="post">
+<form class="logInContainer" action="index.php" method="post">
     <input name="action" value="userPage" type="hidden">
     <h2>Sign-in</h2>
-    <div class="email__box">
+    <div class="emailBox">
         <label for="email">Email </label>
         <input id="email" type="text" name="email" />
     </div>
-    <div class=" password__box">
+    <div class=" passwordBox">
         <label for="password">Password </label>
         <input id="password" type="text" name="password" />
     </div>
-    <input value="login" type="submit">
+    <input value="Continue" type="submit">
 </form>
-<form class="sign__in--container" action="./view/signUpView.php" method="post">
+<form class="signInContainer" action="index.php" method="post">
+    <input name="action" value="signUp" type="hidden">
     <!-- <label for="sign__in">create your account</label> -->
     <input value="create your account" type="submit">
-
 </form>
 
 
