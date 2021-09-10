@@ -3,7 +3,7 @@
     ?>
 
     <div class = "top>">
-        <img src ="../images/sportifyLogo.png" id="sportifyLogo">
+        <img src ="./public/img/sportifyLogo.png" id="sportifyLogo">
     </div>
     
     <div class = "mainContainer">
@@ -11,7 +11,7 @@
         <div class = "leftContainer">
         <div>
             Sportify ?
-            <img src="../img/runningReady.jpeg">
+            <img src="./public/img/runningReady.jpeg">
         <!-- carousel  -->
         </div>    
         </div>

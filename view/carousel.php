@@ -1,5 +1,5 @@
-<div id="myCarousel" class="carousel slide">
-    <ol class="carousel-indicators">
+<div id="myCarousel" class="carouselSlide">
+    <ol class="carouselIndicators">
         <li data-target="#myCarousel" data-slide_to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide_to="1"></li>
         <li data-target="#myCarousel" data-slide_to="2"></li>
@@ -7,27 +7,27 @@
     </ol>
 
     <!-- wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carouselInner">
         <div class="imageActive">
-            <img src="./public/img/football.jpeg" id="test" alt=""/>
+            <img src="./public/img/yogaTogether.jpeg" id="test" alt="firstImage"/>
         </div>
 
     
-        <div class="">
-            <img src="../images/sportifyLogo.png" alt="123"/>
+        <div class="secondImageActive">
+            <img src="./public/img/yogaClass.jpg" id="test2" alt="secondImage"/>
         </div>
 
-        <div class="">
-            <img src="../images/instagramLogo.jpg" alt="123"/>
+        <div class="thirdImageActive">
+            <img src="./public/img/martialSports.jpeg" id="test3" alt="thirdImage"/>
         </div>
     </div>
 
      <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
+  <a class="leftCarouselControl" href="#myCarousel" data-slide="prev">
+    <span class="glyphiconChevronLeft"></span>
+    <span class="srOnly">Previous</span>
   </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
+  <a class="rightCarouselControl" href="#myCarousel" data-slide="next">
+    <span class="glyphiconChevronRight"></span>
+    <span class="srOnly">Next</span>
   </a>
