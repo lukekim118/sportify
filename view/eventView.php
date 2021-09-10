@@ -13,7 +13,10 @@
 <body>
     <?php require('searchform.php');?>
     <div id='mainDiv'>
-        <?php include('generateEventInfo.php')?>
+    <?php showAllEvents();
+        foreach ($events as $event) {
+        include('eventListView.php');
+        };?>
     </div>
 </body>
 </html>
