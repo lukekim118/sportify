@@ -1,13 +1,14 @@
-<?php $title="searchForm";?>
+<?php $title="Search";?>
+
 <?php ob_start();?>
 
-<h1>UPCOMING EVENTS</h1>
-    <form id='form1' method='POST' action='../model/search.php' type='SUBMIT'>
+<h1>UPCOMING EVENTS</h1><br>
+    <form id='form1' class='forms' method='POST' action='./model/search.php' type='submit'>
         <label for='name'>Find an event by name : </label>
         <input name='search' type='text' autocomplete="off"></input>
-        <input name='submit' value='Search' type='submit'></input><br>
+        <input id='searchButton' class='buttons' name='searchButton' value='Search' type='button'></input><br>
     </form><br><br>
-    <form method='POST' action='../model/search.php' type='SUBMIT'>
+    <form id='form2' class='forms' method='POST' action='./model/search.php' type='submit'>
         <label>Filters : </label>
         <select id='price' name='price'>
         <option value='lowerprice'>Under $10</option>
@@ -35,9 +36,10 @@
         <input type="checkbox" name="noequipment">
         <label for="checkbox">No equipment needed</label>
         <input type="checkbox" name="duration">
-        <label for="duration">Not longer then 2 hours</label>    
-        <input id='filter' name='filters' value='Apply filters' type='button'></input><br>
+        <label for="duration">Not longer then 2 hours</label>
+        <input name='applyFilters' type='hidden'></input>    
+        <input id='filters' class='buttons' name='filters' value='Apply filters' type='button'></input><br>
     </form> 
-    <script src = '../public/js/main.js'></script>
-
+    <script src = './public/js/main.js '></script>
 <?php $content = ob_get_clean();?>
+<?php require("template.php");

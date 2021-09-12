@@ -1,20 +1,19 @@
 <?php
 require("./model/model.php");
-require("./model/search.php");
 
-function showAllEvents() {
+function displayAllEvents() {
     $events = showAllEvents();
-    require("./view/eventView.php");
+    require("./view/eventsView.php");
 };
 
-function searchAllEvents() {
-    $events = searchAllEvents();
-    require("./view/eventView.php");
-    require("./view/searchForm.php");
-};
+// function searchAllEvents() {
+//     $events = searchEvents();
+//     require("./view/eventsView.php");
+//     require("./view/searchForm.php");
+// };
 
-function filterEvents() {
-    $events = filterEvents();
-    require("./view/eventView.php");
-    require("./view/searchForm.php");
-};
+// function filterAllEvents() {
+//     $events = filterEvents();
+//     require("./view/eventsView.php");
+//     require("./view/searchForm.php");
+// };
