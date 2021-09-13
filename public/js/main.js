@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 function searchEvents() {
-
     var xhr = new XMLHttpRequest();
     xhr.open('POST', './controller/search.php'); 
     var myform = document.getElementById('form1');
     form = new FormData(myform);
-    
     xhr.addEventListener('readystatechange', (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             e.preventDefault();
@@ -16,13 +13,11 @@ function searchEvents() {
 };
 
 function filterEvents() {
-
     var xhr = new XMLHttpRequest();
     xhr.open('POST', './controller/search.php'); 
     var myform = document.getElementById('form2');
     form = new FormData(myform);
     console.log (form);
-
     xhr.addEventListener('readystatechange', (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             e.preventDefault();
@@ -44,11 +39,9 @@ searchSubmit.addEventListener('click', function(e){
     e.preventDefault;
     searchEvents();
 });
-=======
+
 const signUpContainerForm = document.querySelector(".signupContainer form");
 console.log(signUpContainerForm);
-
-
 
 const handleSignUp = (e) =>{
     e.preventDefault();
@@ -61,13 +54,9 @@ const handleSignUp = (e) =>{
     if(emailTrue && firstNameTrue && lastNameTrue && newPasswordTrue && rePasswordTrue ){
         signUpContainerForm.submit();
         console.log("It is submitted");
-    }
-
-}
-
+    };
+};
 
 if(signUpContainerForm){
     signUpContainerForm.addEventListener("submit", handleSignUp);
-}
-
->>>>>>> 435d99fd6d8dacdc331e884cd34e6c777100689f
+};
