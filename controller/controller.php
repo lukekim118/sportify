@@ -2,6 +2,7 @@
 
 require_once("./model/LoginManager.php");
 require_once("./model/SignUpManager.php");
+require_once("./model/model.php");
 
 //Model view should be made by class(OOP),since I can just inherit db collector form parents
 
@@ -29,3 +30,19 @@ function createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePa
     $newUserInfos = $signUpManager->processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
     // require("./model/ignUpManager.php");
 }
+function displayAllEvents() {
+    $events = showAllEvents();
+    require("./view/eventsView.php");
+};
+//These might be needed later
+// function searchAllEvents() {
+//     $events = searchEvents();
+//     require("./view/eventsView.php");
+//     require("./view/searchForm.php");
+// };
+
+// function filterAllEvents() {
+//     $events = filterEvents();
+//     require("./view/eventsView.php");
+//     require("./view/searchForm.php");
+// };

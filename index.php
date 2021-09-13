@@ -1,5 +1,5 @@
 <?php
-// Connexion to the database: 
+//Connection to the database: 
 try {
     require("./controller/controller.php");
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
@@ -47,7 +47,10 @@ try {
             }
             userPage($email, $password);
             break;
-
+        case "events": 
+            displayAllEvents();
+            break;
+            
         default:
             login();
             break;
