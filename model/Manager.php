@@ -1,22 +1,12 @@
 <?php
-class Manager {
-        
-    /**
-     * _connexion
-     *
-     * @var PDOStatement
-     */
-    protected $_connexion;
-    const DBNAME = "batch13";
-    const LOGIN = "root";
-    const PWD = "";
-    
-    /**
-     * __construct
-     *
-     * @return void
-     */
-    protected function __construct () {
-        $this->_connexion = new PDO("mysql:host=localhost;dbname=".self::DBNAME.";charset=utf8", self::LOGIN , self::PWD );
+
+class Manager
+{
+    protected $_db;
+    //If user is different , do not use constant, argument is better ... 
+    protected function __construct()
+    {
+
+        $this->_db = new PDO("mysql:host=localhost;dbname=batch13-project;charset=utf8", "root", "");
     }
 }
