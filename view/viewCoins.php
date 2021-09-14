@@ -1,5 +1,7 @@
-<?php $title = "Purchase Coins";?>
+<?php $title="Purchase"?>
 <?php ob_start();?>
+<div>amount of coins</div>
+<div><?=$coins?></div>
 <form method="POST" action="index.php">
     <input type="hidden" value="purchaseCoin" name="action">
     <input type="radio" value="10" name="coin">
@@ -10,6 +12,3 @@
 </form>
 <?php $content = ob_get_clean();?>
 <?php require_once('template.php');?>
-
-
-

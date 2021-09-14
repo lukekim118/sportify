@@ -2,7 +2,6 @@
 require_once("./model/CoinManager.php");
 require_once("./model/LoginManager.php");
 require_once("./model/SignUpManager.php");
-require_once("./model/model.php");
 
 //Model view should be made by class(OOP),since I can just inherit db collector form parents
 
@@ -52,7 +51,8 @@ function addCoins($addBal) {
     $showBal = $coinManager->viewCoins();
     $newBal = $showBal+$addBal;
     $coinManager->changeCoins($newBal);
-    // require("./view/indexView.php");
+    header('Location:index.php?action=viewCoins');
+   
 }
 function useCoins(){
 
@@ -63,8 +63,8 @@ function refundCoins(){
 function refundAllCoins(){
 
 }
-function viewCoinOptions() {
+function viewCoins() {
     $coinManager = new CoinManager();
-    $showBal = $coinManager->viewCoins();
-    require("./view/coinOptions.php");
+    $coins = $coinManager->viewCoins();
+    require("./view/viewCoins.php");
 }

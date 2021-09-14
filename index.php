@@ -51,12 +51,11 @@ try {
             displayAllEvents();
             break;
         case "purchaseCoin":
-            if(isset($_POST['coin10'])){
-                manageCoins(10);
-            } elseif(isset($_POST['coin110'])){
-                manageCoins(110);
-            }
+            addCoins($_POST['coin']);
         break;
+        case "viewCoins":
+            viewCoins();
+            break;
         default:
             login();
             break;
