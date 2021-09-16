@@ -5,12 +5,12 @@ try {
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
     switch ($action) {
-            // case "logIn":
-            //     if (!empty($_POST["email"]) && !empty($_POST["password"])) {
-            //         $email = $_POST["email"];
-            //         $password = $_POST["password"];
-            //     }
-            //     login($email, $password);
+        case "logIn":
+            if (!empty($_POST["email"]) && !empty($_POST["password"])) {
+                $email = $_POST["email"];
+                $password = $_POST["password"];
+            }
+            login($email, $password);
 
         case "signUp":
             signUp();
@@ -46,7 +46,6 @@ try {
                 $password = $_POST["password"];
             }
             userPage($email, $password);
-            break;
 
         default:
             login();
