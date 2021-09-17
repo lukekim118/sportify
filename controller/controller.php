@@ -26,6 +26,6 @@ function createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePa
 
 {
     $userManager = new UserManager();
-    $newUserInfos =  $userManager->processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
-    // require("./model/ignUpManager.php");
+    $newUserInfos = $userManager->processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
+    // require("./model/signUpManager.php");
 }

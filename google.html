@@ -1,5 +1,8 @@
 `
 <script>
+  const CLIENT_ID =
+    "935538632306-uidasnjnrrkoh02vpct6ol7eh1mk4uqf.apps.googleusercontent.com";
+  const CLIEND_PASSWORD = "DVv2KHiCoX8S9opGZMeVh8Ld";
   var GoogleAuth;
   var SCOPE = "https://www.googleapis.com/auth/drive.metadata.readonly";
   function handleClientLoad() {
@@ -18,8 +21,8 @@
     // 'scope' field specifies space-delimited list of access scopes.
     gapi.client
       .init({
-        apiKey: "YOUR_API_KEY",
-        clientId: "YOUR_CLIENT_ID",
+        apiKey: "AIzaSyBBZtlvvNBpZC0FdjycHDl282XoL7QcFsI",
+        clientId: CLIENT_ID,
         discoveryDocs: [discoveryUrl],
         scope: SCOPE,
       })
