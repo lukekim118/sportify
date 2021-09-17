@@ -22,7 +22,6 @@ class LoginManager extends Manager
         // $email = $infos["email"];
         echo $email;
 
-
         if (password_verify($password, $infos["password"])) {
             return $infos;
         } else {

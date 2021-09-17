@@ -1,12 +1,13 @@
 function searchEvents() {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', './controller/search.php'); 
+    xhr.open('POST', 'index.php?action=search'); 
     var myform = document.getElementById('form1');
     form = new FormData(myform);
     xhr.addEventListener('readystatechange', (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             e.preventDefault();
-            document.getElementById('mainDiv').innerHTML = '<span>' + xhr.responseText + '</span>';
+            document.getElementById('mainDiv').innerHTML = xhr.responseText;
+            document.getElementById('searchTextInput').value = '';
         }
     });
     xhr.send(form);
@@ -14,15 +15,14 @@ function searchEvents() {
 
 function filterEvents() {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', './controller/search.php'); 
+    xhr.open('POST', 'index.php?action=filter'); 
     var myform = document.getElementById('form2');
     form = new FormData(myform);
-    console.log (form);
     xhr.addEventListener('readystatechange', (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             e.preventDefault();
-            console.log (xhr.responseText);
-            document.getElementById('mainDiv').innerHTML = '<span>' + xhr.responseText + '</span>';
+            document.getElementById('mainDiv').innerHTML = xhr.responseText;
+            document.getElementById('searchTextInput').value = '';
         }
     });
     xhr.send(form);
@@ -60,3 +60,4 @@ const handleSignUp = (e) =>{
 if(signUpContainerForm){
     signUpContainerForm.addEventListener("submit", handleSignUp);
 };
+

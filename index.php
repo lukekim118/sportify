@@ -47,10 +47,15 @@ try {
             }
             userPage($email, $password);
             break;
-        case "events": 
+        case "events" : 
             displayAllEvents();
             break;
-            
+        case "search" :
+            searchAllEvents($_POST['search']);
+            break;
+        case "filter" :
+            filterAllEvents($_POST['price'], $_POST['date'], $_POST['indoor'], $_POST['language'], $_POST['noequipment'], $_POST['duration']);
+            break;
         default:
             login();
             break;
