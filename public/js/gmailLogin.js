@@ -1,6 +1,7 @@
 
 
 let profile;
+let tokenId;
 function onSignIn(googleUser) {
     profile = googleUser.getBasicProfile();
     console.log(profile);
@@ -11,8 +12,8 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     // return profile;
-    var id_token = googleUser.getAuthResponse().id_token;;
-    console.log("Token id 👉" + id_token);
+    const tokenId = googleUser.getAuthResponse().id_token;;
+    console.log("Token id 👉" +tokenId);
     const email = profile.getEmail();
     const givenName = profile.getGivenName();
     const familyName = profile.getFamilyName();
@@ -28,8 +29,13 @@ function onSignIn(googleUser) {
     data.append("givenName", givenName);
     data.append("familyName", familyName);
     data.append("imageURL", imageURL);
+    data.append("tokenId", tokenId);
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
+      const btn  = document.querySelector(".signInContainer");
+      const span = document.createElement("span");
+      span.innerHTML = xhr.responseText;
+      btn.appendChild(span);
       console.log('Signed in as: ' + xhr.responseText);
     };
     xhr.send(data);
@@ -38,14 +44,8 @@ function onSignIn(googleUser) {
 
 function signOut() {
   // const userExist = onSignIn()
-
-  if(profile) {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
-  } 
-  else console.log("user already signed out");
-  
-
 }
