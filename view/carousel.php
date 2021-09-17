@@ -1,33 +1,61 @@
-<div id="myCarousel" class="carouselSlide">
-    <ol class="carouselIndicators">
-        <li data-target="#myCarousel" data-slide_to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide_to="1"></li>
-        <li data-target="#myCarousel" data-slide_to="2"></li>
-        <li data-target="#myCarousel" data-slide_to="3"></li>
+<section class="carousel" aria-label="Gallery">
+  <ol class="carousel__viewport">
+    <li id="carousel__slide1"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper">
+        <a href="#carousel__slide4"
+           class="carousel__prev">Go to last slide</a>
+        <a href="#carousel__slide2"
+           class="carousel__next">Go to next slide</a>
+      </div>
+    </li>
+    <li id="carousel__slide2"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide1"
+         class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide3"
+         class="carousel__next">Go to next slide</a>
+    </li>
+    <li id="carousel__slide3"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide2"
+         class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide4"
+         class="carousel__next">Go to next slide</a>
+    </li>
+    <li id="carousel__slide4"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide3"
+         class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide1"
+         class="carousel__next">Go to first slide</a>
+    </li>
+  </ol>
+  <aside class="carousel__navigation">
+    <ol class="carousel__navigation-list">
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide1"
+           class="carousel__navigation-button">Go to slide 1</a>
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide2"
+           class="carousel__navigation-button">Go to slide 2</a>
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide3"
+           class="carousel__navigation-button">Go to slide 3</a>
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide4"
+           class="carousel__navigation-button">Go to slide 4</a>
+      </li>
     </ol>
-
-    <!-- wrapper for slides -->
-    <div class="carouselInner">
-        <div class="imageActive">
-            <img src="./public/img/yogaTogether.jpeg" id="test" alt="firstImage"/>
-        </div>
-
-    
-        <div class="secondImageActive">
-            <img src="./public/img/yogaClass.jpg" id="test2" alt="secondImage"/>
-        </div>
-
-        <div class="thirdImageActive">
-            <img src="./public/img/martialSports.jpeg" id="test3" alt="thirdImage"/>
-        </div>
-    </div>
-
-     <!-- Left and right controls -->
-  <a class="leftCarouselControl" href="#myCarousel" data-slide="prev">
-    <span class="glyphiconChevronLeft"></span>
-    <span class="srOnly">Previous</span>
-  </a>
-  <a class="rightCarouselControl" href="#myCarousel" data-slide="next">
-    <span class="glyphiconChevronRight"></span>
-    <span class="srOnly">Next</span>
-  </a>
+  </aside>
+</section>
