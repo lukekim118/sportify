@@ -18,6 +18,13 @@ function userPage($email, $password)
     require("./view/userPageView.php");
 }
 
+function googleLogin($email, $givenName, $familyName, $imageURL, $tokenId)
+{
+    $userManager = new UserManager();
+    $userInfos = $userManager->googleSignUp($email, $givenName, $familyName, $imageURL, $tokenId);
+    require("./view/userPageView.php");
+}
+
 function signUp()
 {
     require("./view/signUpView.php");
@@ -28,4 +35,5 @@ function createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePa
     $userManager = new UserManager();
     $newUserInfos = $userManager->processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
     // require("./model/signUpManager.php");
+    require("./view/userPageView.php");
 }

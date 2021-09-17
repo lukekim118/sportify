@@ -41,17 +41,21 @@ try {
             break;
 
         case "userPage":
-            print_r($_POST);
+            // print_r($_POST);
             if (!empty($_POST["email"]) && !empty($_POST["password"])) {
                 $email = $_POST["email"];
                 $password = $_POST["password"];
                 userPage($email, $password);
-            } else if (!empty($_POST["email"])) {
+            } else if (!empty($_POST["email"]) && !empty($_POST["givenName"])) {
                 // userPage($_POST["email"], NULL);
-                echo "helo";
+                $email = $_POST["email"];
+                $givenName = $_POST["givenName"];
+                $familyName = $_POST["familyName"];
+                $imageURL = $_POST["imageURL"];
+                $tokenId = $_POST["tokenId"];
+                googleLogin($email, $givenName, $familyName, $imageURL, $tokenId);
             } else {
-                echo $_REQUEST["email"];
-                throw new Exception("Please put a valid user information");
+                throw new Exception("Please put a valid user information.");
             }
             break;
 
