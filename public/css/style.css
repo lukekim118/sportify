@@ -1,295 +1,365 @@
-body {
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+body{
+  margin :0;
+  padding :0;
+  line-height: 20px;
+  font-family: "Poppins", Arial, sans-serif;
+}
+ul {
+  padding :0;
+  margin:0;
+  list-style-type: none;
+}
+a, a:visited {
+  color : black;
+  text-decoration: none;
+}
+.sportifyLogo{
+  height: 70px;
+  width: 200px;
+}
+header {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
 }
 
-div {
-    display: block;
+.logoTop{  
+  width:60%;
+  text-align: left;
 }
 
-.eventDetailHeader {
-    width: 100%;
-    padding-top: 100px;
-    margin-bottom: 20px;
-    background-color: white;
-    border-bottom: 1px solid lightgrey;
-    border-bottom-width: 1px;
-    -moz-border-bottom-colors: lightgray;
+.topRight{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:40%;
+  /* background-color: blue; */
 }
 
-.hostPhoto {
-    height: 50px;
-    width: 50px;
-    margin: 10px 20px 0 20px;
-    margin-top: 10px;
-    margin-right: 20px;
-    margin-bottom: 0px;
-    margin-left: 20px;
-    clip-path: circle(50% at 50% 50%);
-    background-position: center;
-    background-position-x: center;
-    background-position-y: center;
-    background-size: cover;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    object-fit: cover;
+.mainContainer{
+  display:flex;
+}
+.leftContainer {
+  border-right: 2px solid darkgray  ;
+  padding-right: 10px;
 }
 
-
-#eventHeaderContent {
-    width: 85%;
-    margin: auto;
-    margin-top: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    padding-bottom: 20px;
+.mainContainer > div{
+  width : 50%;
 }
 
-#headerContentExtra {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* ~~~~~~~~~~~~~~~~~ switch Button   ~~~~~~~~~~~~~~~~~~~~` */
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: 100px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+.toggle-control>input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+.toggle-control>input:checked ~ .control {
+  background-color: dodgerblue;
+}
+.toggle-control>input:checked ~ .control:after{
+  left: 55px;
 }
 
-#eventName {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.toggle-control>.control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  background-color: darkgray;
+  transition: background-color .15s ease-in;
+}
+.toggle-control>.control:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background: white;
+  transition: left .15s ease-in;
 }
 
-#eventDetail {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: space-between;
-   width: 100vm;
-   margin: auto;
-   margin-top: auto;
-   margin-right: auto;
-   margin-bottom: auto;
-   margin-left: auto;
-   padding-bottom: 50px;
+/* ~~~~~~~~~~~~~~~~~ FOOTER   ~~~~~~~~~~~~~~~~~~~~` */
+h4, p{
+  margin :0;
+}
+h4 {
+  font-weight: bold;
+} 
+
+footer{
+  display: flex;
+  justify-content: space-between;
+}  
+
+.leftBottom{
+  width:35%;
 }
 
-#attendButton {
-    width: auto;
-    padding: 0 10px 0 10px;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 10px;
+.rightBottom{
+  width:65%;
+  display :flex;
+  justify-content: space-between;
 }
 
-.submit {
-    margin: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    background-color: #005d8f;
-    border-style: none;
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    color: white;
-    border-radius: 42px;
-    border-top-left-radius: 42px;
-    border-top-right-radius: 42px;
-    border-bottom-left-radius: 42px;
-    border-bottom-right-radius: 42px;
-    height: 50px;
+.rightBottom ul {
+  display:flex;
+  justify-content: center;
 }
-
-.eventDetailMainContent {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    margin-bottom: 20px;
+.snsIcon{
+  padding-right: 10px;
 }
-
-.eventDetailDescription {
-    width: 65%;
-}
-.eventImage {
-    max-width: 100%;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.eventDetailSideContent {
-    width: 32%;
-    margin-left: 15px;
-}
-
-#commentForm {
-    margin-top: 50px;
-}
-
-#formContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#comment {
-    width: 70%;
-    border: none;
-    border-top-color: initial;
-    border-top-style: none;
-    border-top-width: initial;
-    border-right-color: initial;
-    border-right-style: none;
-    border-right-width: initial;
-    border-bottom-color: initial;
-    border-bottom-style: none;
-    border-bottom-width: initial;
-    border-left-color: initial;
-    border-left-style: none;
-    border-left-width: initial;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    resize: none;
-    border-radius: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    padding: 20px;
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-}
-
-.mapDisplay {
-    background-color: silver;
-    border-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-
-}
-
-.eventInfo {
-    background-color: silver;
-    border-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+.sns {
+  width: 30px;
+  height:30px;
 }
 
 
-.eventInfoDetail {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    margin: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+/* CAROUSEL */
+
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
 }
 
-
-
-#mapContainer {
-    width: 100%;
-    margin: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-bottom: ;
-    margin-left: auto;
-    display: flex;
-    justify-content: space-between;
+*::-webkit-scrollbar {
+  width: 0;
 }
 
-#map {
-    border: 2px solid black;
-    border-top-color: black;
-    border-top-style: solid;
-    border-top-width: 2px;
-    border-right-color: black;
-    border-right-style: solid;
-    border-right-width: 2px;
-    border-bottom-color: black;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    border-left-color: black;
-    border-left-style: solid;
-    border-left-width: 2px;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 550px;
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-h5 {
-    display: block;
-    font-size: 0.83em;
-    margin-block-start: 1.67em;
-    margin-inline-end: 1.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
 }
 
-#eventPreviews {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+* {
+  -ms-overflow-style: none;
 }
 
-#seeAllEvents {
-    margin-top: 15px;
-    color:  #005d8f;
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-footer {
-    margin-top: 0px;
-    padding-bottom: 10px;
-    background: wheat;
-    background-image: initial;
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: white;
+.carousel {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
 }
 
-.footer {
-    margin-bottom: 0px;
-    padding-left: 0px;
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
-footer>ul {
-    margin: 0;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    text-align: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  counter-increment: item;
+}
+.carousel__slide:nth-child(1) {
+  background: url("../img/runningReady.jpeg");
+}
+.carousel__slide:nth-child(2) {
+  background: url("../img/yogaTogether.jpeg");
+}
+.carousel__slide:nth-child(3) {
+  background: url("../img/yogaClass.jpg");;
+}
+.carousel__slide:nth-child(4) {
+  background: url("../img/sportsActivities.jpg");
+}
+
+.carousel__slide:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-40%,70px);
+  color: #fff;
+  font-size: 2em;
+}
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel__slide:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+.carousel__navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+  left: -1rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #333;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+/* @TODO change the button right and left */
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
 }
