@@ -4,12 +4,15 @@ try {
     require("./controller/controller.php");
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
-    switch ($action) {
-
-
-        default:
-
+    switch ($action) { 
+        case "eventPage":
+            eventPage();
             break;
+
+
+        
+
+           
     }
 } catch (Exception $e) {
     $errorMsg = $e->getMessage();
