@@ -9,12 +9,24 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./public/css/eventview.css">
     <link rel="stylesheet" href="./public/css/style.css">
+<<<<<<< HEAD
+=======
+
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <meta name="google-signin-client_id" content="935538632306-uidasnjnrrkoh02vpct6ol7eh1mk4uqf.apps.googleusercontent.com">
+    <script async defer src="./public/js/gmailLogin.js"></script>
+>>>>>>> cbbbbbd497962075e03a74c8193cf763e1e4251d
 </head>
 <body>
+<<<<<<< HEAD
     <div id="logo"> 
         <img id=logoImg src="./public/img/sportifyLogo.png"> 
     </div> 
     <?= $content;?>
+=======
+    <?= $content; ?>
+
+>>>>>>> cbbbbbd497962075e03a74c8193cf763e1e4251d
     <script defer src="../PROJECTBATCH13/public/js/FormCheck.js"></script>
     <script defer src="../PROJECTBATCH13/public/js/main.js"></script>
 </body>

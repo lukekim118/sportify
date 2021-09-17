@@ -20,6 +20,12 @@
     <input value="create your account" type="submit">
 </form>
 
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<a href="#" onclick="signOut();">Sign out</a>
+<!-- <div id="auth-status" style="display: inline; padding-left: 25px"></div> -->
+<hr />
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 <?php $content = ob_get_clean(); ?>
 <?php require("template.php"); ?>

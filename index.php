@@ -16,36 +16,42 @@ try {
             signUp();
             break;
         case "signUpControl":
-            if (isset($_POST["emailAddress"])) {
+            if (!empty($_POST["emailAddress"])) {
                 $emailAddress = $_POST["emailAddress"];
             }
-            if (isset($_POST["firstname"])) {
+            if (!empty($_POST["firstname"])) {
                 $firstname = $_POST["firstname"];
             }
-            if (isset($_POST["lastname"])) {
+            if (!empty($_POST["lastname"])) {
                 $lastname = $_POST["lastname"];
             }
-            if (isset($_POST["newPassword"])) {
+            if (!empty($_POST["newPassword"])) {
                 $newPassword = $_POST["newPassword"];
             }
-            if (isset($_POST["rePassword"])) {
+            if (!empty($_POST["rePassword"])) {
                 $rePassword = $_POST["rePassword"];
             }
-            if (isset($_POST["phone"])) {
+            if (!empty($_POST["phone"])) {
                 $phone = $_POST["phone"];
             } else {
-                $phone = "";
+                $phone = NULL;
             }
 
-            createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
             break;
 
         case "userPage":
-            if (isset($_POST["email"]) && isset($_POST["password"])) {
+            print_r($_POST);
+            if (!empty($_POST["email"]) && !empty($_POST["password"])) {
                 $email = $_POST["email"];
                 $password = $_POST["password"];
+                userPage($email, $password);
+            } else if (!empty($_POST["email"])) {
+                // userPage($_POST["email"], NULL);
+                echo "helo";
+            } else {
+                echo $_REQUEST["email"];
+                throw new Exception("Please put a valid user information");
             }
-            userPage($email, $password);
             break;
         case "events" : 
             displayAllEvents();
