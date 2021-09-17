@@ -36,7 +36,7 @@ try {
             } else {
                 $phone = NULL;
             }
-
+            createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
             break;
 
         case "userPage":

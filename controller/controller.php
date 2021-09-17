@@ -29,6 +29,15 @@ function signUp()
     require("./view/signUpView.php");
 }
 
+function createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone)
+
+{
+    $userManager = new UserManager();
+    $newUserInfos = $userManager->processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
+    // require("./model/signUpManager.php");
+    require("./view/userPageView.php");
+}
+
 function searchAllEvents($search)
 {
     $EventManager = new EventManager();
