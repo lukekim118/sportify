@@ -50,11 +50,6 @@ header {
 }
 
 /* ~~~~~~~~~~~~~~~~~ switch Button   ~~~~~~~~~~~~~~~~~~~~` */
-/* $toggle-radius: 50%; */
-
-/* $toggle-radius: 25px; */
-
-
 .toggle-control {
   display: block;
   position: relative;
@@ -208,7 +203,7 @@ ol, li {
 }
 
 .carousel__slide:before {
-  content: counter(item);
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
