@@ -47,6 +47,13 @@ function createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePa
     require("./view/userPageView.php");
 }
 
+function showUserProfile()
+{
+    $ProfileManager = new ProfileManager();
+    $userData = $ProfileManager->showProfile();
+    require("./view/userProfilePage.php");
+}
+
 function searchAllEvents($search)
 {
     $EventManager = new EventManager();

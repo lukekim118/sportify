@@ -4,11 +4,10 @@ try {
     require("./controller/controller.php");
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
-    switch ($action) { 
+    switch ($action) {
         case "eventPage":
             eventPage();
             break;
-    switch ($action) {
         case "landing":
             landing();
             break;
@@ -45,7 +44,6 @@ try {
             }
             createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
             break;
-
         case "userPage":
             // print_r($_POST);
             if (!empty($_POST["email"]) && !empty($_POST["password"])) {
@@ -63,6 +61,9 @@ try {
             } else {
                 throw new Exception("Please put a valid user information.");
             }
+            break;
+        case "profile" :
+            showUserProfile();
             break;
         case "events" : 
             displayAllEvents();
