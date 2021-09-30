@@ -1,27 +1,27 @@
 <?php
-//Connection to the database: 
+
 try {
-    require("./controller/controller.php");
+    require("./controller/controller.php"); //Connection to the database:
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
     switch ($action) {
-        case "eventPage":
-            eventPage();
-            break;
         case "landing":
             landing();
             break;
-            case "logIn":
-                if (!empty($_POST["email"]) && !empty($_POST["password"])) {
-                    $email = $_POST["email"];
-                    $password = $_POST["password"];
-                }
-                login($email, $password);
-
-        case "signUp":
+        case "loginpage":
+            login();
+            break;
+        case "login":
+            if (!empty($_POST["email"]) && !empty($_POST["password"])) {
+                $email = $_POST["email"];
+                $password = $_POST["password"];
+            }
+            login($email, $password);
+            break;
+        case "signup":
             signUp();
             break;
-        case "signUpControl":
+        case "signupcontrol":
             if (!empty($_POST["emailAddress"])) {
                 $emailAddress = $_POST["emailAddress"];
             }
@@ -44,7 +44,7 @@ try {
             }
             createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
             break;
-        case "userPage":
+        case "userpage":
             // print_r($_POST);
             if (!empty($_POST["email"]) && !empty($_POST["password"])) {
                 $email = $_POST["email"];
@@ -62,25 +62,44 @@ try {
                 throw new Exception("Please put a valid user information.");
             }
             break;
-        case "profile" :
-            showUserProfile();
+        case "profile":
+            userPage($_SESSION['sessionUserId'], $_SESSION['sessionPassword']);
             break;
-        case "events" : 
+        case "events":
             displayAllEvents();
             break;
-        case "search" :
+        case "search":
             searchAllEvents($_POST['search']);
             break;
-        case "filter" :
+        case "filter":
             filterAllEvents($_POST['price'], $_POST['date'], $_POST['indoor'], $_POST['language'], $_POST['noequipment'], $_POST['duration']);
+            break;
+        case "eventPage":
+            eventPage();
+            break;
+        case "editprofileinfo":
+            editProfile($_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['nickname'], $_POST['phone'], $_POST['age'], $_POST['languages'], $_POST['sport_interests']);
+            break;
+        case "uploadphoto":
+            uploadPhoto($_FILES);
+            break;
+            // case "becometeacher":
+            //     becomeTeacher();
+            //     break;
+        case "submitCert":
+            submitCert($_FILES);
+            break;
+        case "logout":
+            logout();
             break;
         default:
             landing();
-            // login();
             break;
     }
 } catch (Exception $e) {
     $errorMsg = $e->getMessage();
+    $line = $e->getLine();
+    $file = $e->getFile();
     // $errorCode = $e->getCode();
     require("./view/errorView.php");
 }

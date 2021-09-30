@@ -1,13 +1,15 @@
-<?php $title="Event Page";?>
+<?php $title = "Event Page"; ?>
 
-<?php ob_start();?>
+<?php ob_start(); ?>
+
+<?php echo ($_GET['eventid']) ?>
 
 <div id="eventDetail">
     <div class="eventDetailHeader">
         <div id="eventHeaderContent">
             <div id="eventName">
                 <h3>Get Strong And Fit</h3>
-            </div> 
+            </div>
             <div id="headerContentExtra">
                 <p>
                     <img class="hostPhoto" src="">
@@ -17,9 +19,9 @@
                 </p>
                 <button id="attendButton" class="submit">ATTEND</button>
 
-            </div>   
+            </div>
 
-        </div>   
+        </div>
 
     </div>
 
@@ -31,7 +33,7 @@
                 <h4>Discussion:</h4>
                 <div id="formContent">
                     <img id="authorPhoto" class="hostPhoto" src="">
-                    <textarea name="comment" id="comment" rows="1" placeholder="Leave a comment..."></textarea>  
+                    <textarea name="comment" id="comment" rows="1" placeholder="Leave a comment..."></textarea>
                     <button type="submit" class="submit">POST</button>
 
                 </div>
@@ -44,7 +46,7 @@
             <div class="eventInfo">
 
                 <div class="eventInfoDetail">
-                <p><i class="fa fa-calendar" aria-hidden="true">Sat, Sep 18, 1:00pm</i></p>
+                    <p><i class="fa fa-calendar" aria-hidden="true">Sat, Sep 18, 1:00pm</i></p>
                 </div>
                 <div class="eventInfoDetail">
                     <p>Seoul Korea</p>
@@ -59,22 +61,20 @@
             <div class="mapDisplay">
                 <h5>Map:</h5>
                 <div id="mapContainer">
-                    <div id="map" style=""></div>    
+                    <div id="map" style=""></div>
 
                 </div>
             </div>
-        </aside> 
+        </aside>
 
     </div>
     <h5>More Events Like This One:</h5>
     <div id="eventPreviews"></div>
     <a id="seeAllEvents" href="">See all</a>
-            
+
 </div>
 
 
 
-<?php $content=ob_get_clean(); require("template.php") ?>
-
-
-    
+<?php $content = ob_get_clean();
+require("template.php") ?>

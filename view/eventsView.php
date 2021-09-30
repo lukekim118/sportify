@@ -1,12 +1,14 @@
-<?php $title="Events";?>
+<?php $title = "Events"; ?>
+<?php $style = "eventview.css"; ?>
 
-<?php ob_start();?>
+<?php ob_start(); ?>
 
-<?php include('searchform.php');?>
+<?php include('searchform.php'); ?>
 
 <div id='mainDiv'>
-    <?php include('eventListItemView.php')?>
+    <?php include('eventListItemView.php') ?>
 </div>
 
-<?php $content= ob_get_clean();?>
+<script src='./public/js/events.js'></script>
+<?php $content = ob_get_clean(); ?>
 <?php require("template.php");

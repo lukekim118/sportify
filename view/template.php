@@ -7,6 +7,7 @@
     <title><?= $title;?></title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/<?=$style?>">
     <script async defer src="https://apis.google.com/js/api.js"></script>
     <meta name="google-signin-client_id" content="935538632306-uidasnjnrrkoh02vpct6ol7eh1mk4uqf.apps.googleusercontent.com">
     <script async defer src="./public/js/gmailLogin.js"></script>
@@ -15,7 +16,7 @@
     <?php include("header.php");?>
     <?= $content; ?>
     <?php include('footer.php');?>
-    <script defer src="../PROJECTBATCH13/public/js/FormCheck.js"></script>
-    <script defer src="../PROJECTBATCH13/public/js/main.js"></script>
+    <script defer src="./public/js/FormCheck.js"></script>
+    <script defer src="./public/js/main.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <form class="logInContainer" action="index.php" method="post">
-    <input name="action" value="userPage" type="hidden">
+    <input name="action" value="userpage" type="hidden">
     <h2>Sign-in</h2>
     <div class="emailBox">
         <label for="email">Email </label>

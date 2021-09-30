@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once("Manager.php");
 
 class UserManager extends Manager
@@ -17,6 +19,8 @@ class UserManager extends Manager
         $req->execute();
         $infos = $req->fetch(PDO::FETCH_ASSOC);
         if (password_verify($password, $infos["password"])) {
+            $_SESSION['sessionUserId'] = $email;
+            $_SESSION['sessionPassword'] = $password;
             return $infos;
         } else {
             throw new Exception("There is no user");
@@ -52,7 +56,6 @@ class UserManager extends Manager
         }
     }
 
-
     public function processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone)
     {
         $req = $this->_db->prepare("SELECT * FROM users WHERE email= :email");
@@ -76,7 +79,55 @@ class UserManager extends Manager
             ));
             $req->closeCursor();
         }
-
         return $infos;
+    }
+
+    public function displayUserProfile($email)
+    {
+        $req = $this->_db->prepare("SELECT * FROM users WHERE email='$email'");
+        $req->execute();
+        $userData = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $userData;
+    }
+
+    public function updateInfo($email, $first_name, $last_name, $nickname, $phone, $age, $languages, $sport_interests)
+
+    {
+        $req = $this->_db->prepare("UPDATE users SET first_name=:first_name, last_name=:last_name, nickname=:nickname, phone=:phone, age=:age, languages=:languages, sport_interests=:sport_interests WHERE email='$email'");
+        $req->execute(array(
+            "first_name" => $first_name, //TODO htmlspecialchars
+            "last_name" => $last_name,
+            "nickname" => $nickname,
+            "phone" => $phone,
+            "age" => $age,
+            "languages" => $languages,
+            "sport_interests" => $sport_interests
+        ));
+
+        $req->closeCursor();
+    }
+
+    public function updateCertificate($certificatePath)
+    {
+        $userEmail = $_SESSION['sessionUserId'];
+        $req = $this->_db->prepare("UPDATE users SET certification=:certificate WHERE email='$userEmail'");
+        $req->execute(array(
+            "certificate" => $certificatePath
+        ));
+
+
+        $req = $this->_db->prepare("UPDATE users SET is_teacher=1 WHERE email='$userEmail'");
+        $req->execute();
+        // $req->closeCursor();
+
+
+        $req = $this->_db->prepare("SELECT is_teacher FROM users WHERE email='$userEmail'");
+        $req->execute();
+        $infos = $req->fetch(PDO::FETCH_ASSOC);
+
+        $req->closeCursor();
+
+        return $infos["is_teacher"];
     }
 }

@@ -11,7 +11,7 @@ ob_start();
                 Sportify helps you to create the event that suits your needs ! Chose your sport, the place and the time you want and <i>voila</i> !
                 </span>
                 <!-- Arthur link to event list page -->
-                <a href='index.php?action=#####' title='Go to the events page'>Join our events</a>
+                <a href='index.php?action=events' title='Go to the events page'>Join our events</a>
             </div>
             <?php include("carousel.php");
             ?>
@@ -33,9 +33,3 @@ ob_start();
 $content = ob_get_clean();
 require("template.php");
 ?>
-
-
-
-
-
-

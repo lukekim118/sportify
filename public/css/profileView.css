@@ -1,0 +1,77 @@
+#wrapper {
+  display: flex;
+  justify-content: space-around;
+  outline: 2px solid black;
+}
+
+#profile {
+  text-align: center;
+  margin: 5%;
+}
+
+#alldata {
+  text-align: center;
+  width: 80%;
+}
+
+.userData {
+  margin: auto;
+  padding: 15px;
+  outline: 1px solid #0ad6ff;
+  width: 500px;
+}
+
+#profilePic {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: grey;
+  margin: 40px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.buttons,
+input,
+select {
+  border: 2px solid #f77f00;
+  border-radius: 15px;
+  color: black;
+  padding: 5px 15px;
+  text-align: center;
+  transition: all 0.3s;
+  background-color: #0ad6ff;
+  margin: 20px;
+  font-size: 0.8em;
+}
+
+.buttons:hover {
+  color: white;
+  background-color: #005d8f;
+}
+#mainDiv {
+  height: 1000vw;
+}
+
+#teacherDiv {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+#verified {
+  color: #00d911;
+  font-weight: bold;
+}
+
+#checkmark {
+  height: 18px;
+  width: 18px;
+}
+
+#readonly {
+  background-color: grey;
+  color: white;
+}
