@@ -83,14 +83,32 @@ try {
         case "uploadphoto":
             uploadPhoto($_FILES);
             break;
-            // case "becometeacher":
-            //     becomeTeacher();
-            //     break;
         case "submitCert":
             submitCert($_FILES);
             break;
         case "logout":
             logout();
+        case "purchaseCoin":
+            addCoins($_POST['coin']);
+            break;
+        case "viewCoins":
+            viewCoins();
+            break;
+        case "useCoins":
+            useCoins($_POST['coin']);
+            break;
+        case "refund":
+            refundCoins();
+            break;
+        case "eventView":
+            eventView(0);
+            break;
+        case "addEvent":
+            addEvents($_POST);
+            // addEvents($_POST['description'],$_POST['start_time'],$_POST['duration'],$_POST['indoor_outdoor'],$_POST['price'],$_POST['languages'],$_POST['equipment'],$_POST['number_of_people'],$_POST['difficulty']);
+            break;
+        case "removeEvent":
+            removeEvents($_GET['eventid']);
             break;
         default:
             landing();
