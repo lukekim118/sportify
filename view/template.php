@@ -7,11 +7,12 @@
     <title><?= $title;?></title>
     <link rel="stylesheet" href="./public/css/eventview.css">
     <link rel="stylesheet" href="./public/css/style.css">
+    <script src="https://kit.fontawesome.com/f66e3323fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="logo"> 
+    <!-- <div id="logo"> 
         <img id=logoImg src="./public/img/sportifyLogo.png"> 
-    </div> 
+    </div>  -->
     <?= $content;?>
     <script defer src="../PROJECTBATCH13/public/js/FormCheck.js"></script>
     <script defer src="../PROJECTBATCH13/public/js/main.js"></script>

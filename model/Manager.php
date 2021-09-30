@@ -7,6 +7,6 @@ class Manager
     protected function __construct()
     {
 
-        $this->_db = new PDO("mysql:host=localhost;dbname=batch13-project;charset=utf8", "root", "");
+        $this->_db = new PDO("mysql:host=localhost;dbname=batch13-project;charset=utf8", "root", "", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
 }
