@@ -135,7 +135,12 @@ class EventManager extends Manager
             'number_of_people' => $number_of_people,
             'difficulty' => $difficulty
         ));
+        $id_req = $this->_db->prepare('SELECT id FROM events ORDER BY id DESC LIMIT 0,1');
+        $id_req->execute();
+        $id = $id_req->fetch(PDO::FETCH_ASSOC)['id'];
         $req->closeCursor();
+        $id_req->closeCursor();
+        return $id;
     }
 
     public function listEvent($id)
@@ -144,17 +149,10 @@ class EventManager extends Manager
         $req->execute(array(
             'id' => $id
         ));
-        $fetch = $req->fetch(PDO::FETCH_ASSOC);
-        echo "Description : " . $fetch['description'] . "</br>";
-        echo "Start time : " . $fetch['start_time'] . "</br>";
-        echo "Duration : " . $fetch['duration'] . "</br>";
-        echo "Indoor/Outdoor : " . $fetch['indoor_outdoor'] . "</br>";
-        echo "Price : " . $fetch['price'] . "</br>";
-        echo "Language : " . $fetch['languages'] . "</br>";
-        echo "Equipment : " . $fetch['equipment'] . "</br>";
-        echo "Number of People : " . $fetch['number_of_people'] . "</br>";
-        echo "Difficulty : " . $fetch['difficulty'] . "</br>";
+        $event = $req->fetch(PDO::FETCH_ASSOC);
+
         $req->closeCursor();
+        return $event;
     }
     public function removeEvent($id)
     {

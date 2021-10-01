@@ -1,22 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
-body{
-  margin :0;
-  padding :0;
+body {
+  margin: 0;
+  padding: 20px;
   line-height: 20px;
   font-family: "Poppins", Arial, sans-serif;
+  line-height: 2em;
 }
+
 ul {
-  padding :0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
-a, a:visited {
-  color : black;
+a,
+a:visited {
+  color: black;
   text-decoration: none;
 }
-.sportifyLogo{
+.sportifyLogo {
   height: 70px;
   width: 200px;
 }
@@ -24,115 +27,33 @@ header {
   padding: 2%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 
-.logoTop{  
-  width:60%;
+.logoTop {
+  width: 60%;
   text-align: left;
 }
 
-.topRight{
+.topRight {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width:40%;
-  /* background-color: blue; */
+  width: 40%;
 }
 
-.mainContainer{
-  display:flex;
+.mainContainer {
+  display: flex;
 }
 .leftContainer {
-  border-right: 2px solid darkgray  ;
+  border-right: 4px solid darkorange;
   padding-right: 10px;
-}
-
-.mainContainer > div{
-  width : 50%;
-}
-
-/* ~~~~~~~~~~~~~~~~~ switch Button   ~~~~~~~~~~~~~~~~~~~~` */
-.toggle-control {
-  display: block;
   position: relative;
-  padding-left: 100px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
-}
-.toggle-control>input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-.toggle-control>input:checked ~ .control {
-  background-color: dodgerblue;
-}
-.toggle-control>input:checked ~ .control:after{
-  left: 55px;
 }
 
-.toggle-control>.control {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 100px;
-  border-radius: 25px;
-  background-color: darkgray;
-  transition: background-color .15s ease-in;
+.mainContainer > div {
+  width: 50%;
 }
-.toggle-control>.control:after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 40px;
-  height: 40px;
-  border-radius: 25px;
-  background: white;
-  transition: left .15s ease-in;
-}
-
-/* ~~~~~~~~~~~~~~~~~ FOOTER   ~~~~~~~~~~~~~~~~~~~~` */
-h4, p{
-  margin :0;
-}
-h4 {
-  font-weight: bold;
-} 
-
-footer{
-  display: flex;
-  justify-content: space-between;
-}  
-
-.leftBottom{
-  width:35%;
-}
-
-.rightBottom{
-  width:65%;
-  display :flex;
-  justify-content: space-between;
-}
-
-.rightBottom ul {
-  display:flex;
-  justify-content: center;
-}
-.snsIcon{
-  padding-right: 10px;
-}
-.sns {
-  width: 30px;
-  height:30px;
-}
-
 
 /* CAROUSEL */
 
@@ -159,7 +80,8 @@ footer{
   -ms-overflow-style: none;
 }
 
-ol, li {
+ol,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -191,17 +113,37 @@ ol, li {
   width: 100%;
   counter-increment: item;
 }
+
 .carousel__slide:nth-child(1) {
-  background: url("../img/runningReady.jpeg");
+  background: url("../img/runningReady.jpeg") no-repeat;
+  background-size: cover;
 }
+
 .carousel__slide:nth-child(2) {
-  background: url("../img/yogaTogether.jpeg");
+  background: url("../img/yogaTogether.jpeg") no-repeat;
+  background-size: cover;
 }
+
 .carousel__slide:nth-child(3) {
-  background: url("../img/yogaClass.jpg");;
+  background: url("../img/yogaClass.jpg") no-repeat;
 }
 .carousel__slide:nth-child(4) {
-  background: url("../img/sportsActivities.jpg");
+  background: url("../img/sportsActivities.jpg") no-repeat;
+}
+
+.carousel-caption {
+  color: #005d8f;
+  text-align: center;
+  margin-top: 350px;
+  background-color: white;
+  opacity: 0.6;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1.1em;
+}
+
+h3 {
+  font-size: 25px;
 }
 
 .carousel__slide:before {
@@ -209,7 +151,7 @@ ol, li {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate3d(-50%,-40%,70px);
+  transform: translate3d(-50%, -40%, 70px);
   color: #fff;
   font-size: 2em;
 }
@@ -299,9 +241,9 @@ ol, li {
 
 .carousel::before,
 .carousel::after {
-  content: '';
+  content: "";
   z-index: 1;
-  background-color: #333;
+  background-color: #696969;
   background-size: 1.5rem 1.5rem;
   background-repeat: no-repeat;
   background-position: center center;
@@ -313,11 +255,104 @@ ol, li {
 }
 /* @TODO change the button right and left */
 .carousel::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+  background-image: url("../img/arrow.png");
+  transform: rotate(180deg);
+  background-size: 100%;
+  top: -2rem;
 }
 
 .carousel::after {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+  background-image: url("../img/arrow.png");
+  background-size: 100%;
+}
+
+/* ~~~~~~~~~~~~~~~~~ switch Button   ~~~~~~~~~~~~~~~~~~~~` */
+
+.rightContainer {
+  text-align: center;
+}
+
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: 100px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+.toggle-control > input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-control > input:checked ~ .control {
+  background-color: dodgerblue;
+}
+.toggle-control > input:checked ~ .control:after {
+  left: 55px;
+}
+
+.toggle-control > .control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  background-color: darkgray;
+  transition: background-color 0.15s ease-in;
+}
+.toggle-control > .control:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background: white;
+  transition: left 0.15s ease-in;
+}
+
+/* ~~~~~~~~~~~~~~~~~ FOOTER   ~~~~~~~~~~~~~~~~~~~~` */
+h4,
+p {
+  margin: 0;
+}
+h4 {
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.leftBottom {
+  width: 35%;
+}
+
+.rightBottom {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightBottom ul {
+  display: flex;
+  justify-content: center;
+}
+.snsIcon {
+  padding-right: 10px;
+}
+.sns {
+  width: 30px;
+  height: 30px;
 }
 
 @keyframes tonext {

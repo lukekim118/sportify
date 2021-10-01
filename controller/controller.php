@@ -43,8 +43,9 @@ function createAccount($emailAddress, $firstname, $lastname, $newPassword, $rePa
 {
     $userManager = new UserManager();
     $newUserInfos = $userManager->processSignUp($emailAddress, $firstname, $lastname, $newPassword, $rePassword, $phone);
+    // print_r($newUserInfos);
     // require("./model/signUpManager.php");
-    require("./view/loginView.php");
+    header("Location:index.php?action=loginpage");
     // require("./view/userPageView.php");
 }
 
@@ -85,7 +86,7 @@ function editProfile($email, $first_name, $last_name, $nickname, $phone, $age, $
 function uploadPhoto($photo_files)
 {
     if ($photo_files['profilePhoto']['error'] > 0) throw new Exception("Error during upload");
-    $maxSize = 1000000;
+    $maxSize = 10000000;
     if ($photo_files['profilePhoto']['size'] > $maxSize) throw new Exception("The size of your file is too big");
     $validExtensions = array('jpg', 'jpeg', 'gif', 'png');
     $uploadExtension = strtolower(substr(strrchr($photo_files['profilePhoto']['name'], "."), 1));
@@ -107,7 +108,7 @@ function uploadPhoto($photo_files)
 function submitCert($pdf_upload)
 {
     if ($pdf_upload['pdfCert']['error'] > 0) throw new Exception("Error during upload");
-    $maxSize = 10000000;
+    $maxSize = 100000000;
     if ($pdf_upload['pdfCert']['size'] > $maxSize) throw new Exception("the size of your file is too big");
     $validExtension = 'pdf';
     $uploadExtension = strtolower(substr(strrchr($pdf_upload['pdfCert']['name'], "."), 1));
@@ -189,9 +190,14 @@ function viewCoins()
 
 function eventView($eventId)
 {
-    require("./view/eventView.php");
+    $eventManager = new EventManager();
+    $event = $eventManager->listEvent($eventId);
+    require("./view/eventPage.php");
 }
-
+function createEvent()
+{
+    require("./view/createEvent.php");
+}
 function addEvents($params)
 {
     if (isset($params['description'])) {
@@ -222,15 +228,15 @@ function addEvents($params)
         $difficulty = $params['difficulty'];
     }
     $eventManager = new EventManager();
-    $eventManager->addEvent($description, $start_time, $duration, $indoor_outdoor, $price, $languages, $equipment, $number_of_people, $difficulty);
-    header('Location:index.php?action=eventView');
+    $event_id = $eventManager->addEvent($description, $start_time, $duration, $indoor_outdoor, $price, $languages, $equipment, $number_of_people, $difficulty);
+    header('Location:index.php?action=eventView&eventid=' . $event_id);
 }
 
 function listEvents($id)
 {
     $eventManager = new EventManager();
-    $eventManager->listEvent($id);
-    require("./view/eventView.php");
+    $event = $eventManager->listEvent($id);
+    require("./view/eventPage.php");
 }
 
 function removeEvents($id)

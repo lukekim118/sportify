@@ -12,12 +12,12 @@
         <label for="password">Password </label>
         <input id="password" type="text" name="password" />
     </div>
-    <input value="Continue" type="submit">
+    <input value="Login" type="submit">
 </form>
 <form class="signInContainer" action="index.php" method="post">
-    <input name="action" value="signUp" type="hidden">
+    <input name="action" value="signup" type="hidden">
     <!-- <label for="sign__in">create your account</label> -->
-    <input value="create your account" type="submit">
+    <input value="Create Account" type="submit">
 </form>
 
 <div class="g-signin2" data-onsuccess="onSignIn"></div>

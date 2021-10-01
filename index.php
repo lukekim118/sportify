@@ -21,7 +21,7 @@ try {
         case "signup":
             signUp();
             break;
-        case "signupcontrol":
+        case "signUpControl":
             if (!empty($_POST["emailAddress"])) {
                 $emailAddress = $_POST["emailAddress"];
             }
@@ -101,7 +101,10 @@ try {
             refundCoins();
             break;
         case "eventView":
-            eventView(0);
+            eventView($_REQUEST['eventid']);
+            break;
+        case "createEvent":
+            createEvent();
             break;
         case "addEvent":
             addEvents($_POST);

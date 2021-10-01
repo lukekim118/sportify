@@ -2,6 +2,6 @@
 
 <form action="index.php" method="POST">
     <input name="action" value="editEvents" type="hidden">
-    <input class="buttons" type="submit" name="createEvent" value="Create an event">
+    <a href="index.php?action=createEvent" class='buttons'>Create an event</a>
     <input class="buttons" type="submit" name="editEvents" value="Edit events">
 </form>

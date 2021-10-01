@@ -9,7 +9,7 @@
             <img id='profilePic' alt='profilephoto' name='profilephoto' src='./private/images/<?= $_SESSION['sessionUserId'] ?>/profilePhoto.image' />
             <form action='index.php' method='POST' enctype='multipart/form-data'>
                 <input name="action" value="uploadphoto" type="hidden">
-                <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+                <input type="hidden" name="MAX_FILE_SIZE" value="1000000000">
                 <input type='file' accept='image/*' id='file' name='profilePhoto'>
                 <label class='buttons' id='sendPhoto' for='file'>Choose new image...</label>
                 <input class='buttons' type="submit" name="submitProfilePic" value="Select">
@@ -73,7 +73,7 @@
             <p>Balance : </p>
             <p><?= $userInfos['balance'] ?></p>
             <input type='hidden' />
-            <button class='buttons'>Buy coins</button>
+            <a href="index.php?action=purchaseCoin" class='buttons'>Buy coins</a>
         </div>
         <div id='teacherDiv' class='userData'>
             <?php
