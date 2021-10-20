@@ -244,3 +244,5 @@ function removeEvents($id)
     $eventManager = new EventManager();
     $eventManager->removeEvent($id);
 }
+
+function 
