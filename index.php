@@ -5,11 +5,11 @@ try {
     $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
 
     switch ($action) {
-        case "landing":
-            landing();
-            break;
         case "loginpage":
             login();
+            break;
+        case "landing":
+            landing();
             break;
         case "login":
             if (!empty($_POST["email"]) && !empty($_POST["password"])) {
@@ -114,7 +114,7 @@ try {
             removeEvents($_GET['eventid']);
             break;
         default:
-            landing();
+            login();
             break;
     }
 } catch (Exception $e) {
